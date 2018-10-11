@@ -4,10 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
 public class MainActivity extends Activity {
@@ -24,22 +29,33 @@ public class MainActivity extends Activity {
 		listView = (ListView)findViewById(R.id.fruitlist);
 		adapter = new FruitAdapter(this,R.layout.fruit_item,fruitlist);
 		listView.setAdapter(adapter);
+		OnItemClickListener lst_fruit = new OnItemClickListener() 
+		{
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) 
+			{
+				Intent fruit_intent = new Intent(MainActivity.this,ActivityFruitItem.class);
+				startActivity(fruit_intent);
+			}
+		};
+		listView.setOnItemClickListener(lst_fruit);
 	}
 	
 	public void initFruitlist()
 	{
-		FruitItem apple = new FruitItem("apple",R.drawable.apple);
-		FruitItem banana = new FruitItem("banana",R.drawable.banana);
-		FruitItem blueberry = new FruitItem("blueberry",R.drawable.blueberry);
-		FruitItem cherry = new FruitItem("cherry",R.drawable.cherry);
-		FruitItem grape = new FruitItem("grape",R.drawable.grape);
-		FruitItem grapefruit = new FruitItem("grapefruit",R.drawable.grapefruit);
-		FruitItem lemon = new FruitItem("lemon",R.drawable.lemon);
-		FruitItem orange = new FruitItem("orange",R.drawable.orange);
-		FruitItem peach = new FruitItem("peach",R.drawable.peach);
-		FruitItem pear = new FruitItem("pear",R.drawable.pear);
-		FruitItem strawberry = new FruitItem("strawberry",R.drawable.strawberry);
-		FruitItem watermelon = new FruitItem("watermelon",R.drawable.watermelon);
+		FruitItem apple = new FruitItem("Apple", R.drawable.apple, Color.parseColor("#a95d3b"));
+		FruitItem banana = new FruitItem("Banana", R.drawable.banana, Color.parseColor("#db916a"));
+		FruitItem blueberry = new FruitItem("Blueberry", R.drawable.blueberry, Color.parseColor("#ebc43b"));
+		FruitItem cherry = new FruitItem("Cherry", R.drawable.cherry, Color.parseColor("#b3c259"));
+		FruitItem grape = new FruitItem("Grape", R.drawable.grape, Color.parseColor("#b2d3e4"));
+		FruitItem grapefruit = new FruitItem("Grapefruit", R.drawable.grapefruit, Color.parseColor("#ecc441"));
+		FruitItem lemon = new FruitItem("Lemon", R.drawable.lemon, Color.parseColor("#90c6c8"));
+		FruitItem orange = new FruitItem("Orange", R.drawable.orange, Color.parseColor("#f0d880"));
+		FruitItem peach = new FruitItem("Peach", R.drawable.peach, Color.parseColor("#b6dbe3"));
+		FruitItem pear = new FruitItem("Pear", R.drawable.pear, Color.parseColor("#dbe3b0"));
+		FruitItem strawberry = new FruitItem("Strawberry", R.drawable.strawberry, Color.parseColor("#e4ab38"));
+		FruitItem watermelon = new FruitItem("Watermelon", R.drawable.watermelon, Color.parseColor("#EBC43B"));
 		fruitlist.add(apple);
 		fruitlist.add(banana);
 		fruitlist.add(blueberry);

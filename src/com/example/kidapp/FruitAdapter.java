@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class FruitAdapter extends ArrayAdapter<FruitItem> {
@@ -26,8 +27,10 @@ public class FruitAdapter extends ArrayAdapter<FruitItem> {
 		View view = LayoutInflater.from(getContext()).inflate(resourceID, null);
 		ImageView fruitImage = (ImageView)view.findViewById(R.id.fruit_image);
 		TextView fruitName = (TextView)view.findViewById(R.id.fruit_name);
+		LinearLayout fruitBackbround = (LinearLayout)view.findViewById(R.id.fruit_bg);
 		fruitImage.setImageResource(fruit.getID());
 		fruitName.setText(fruit.getName());
+		fruitBackbround.setBackgroundColor(fruit.getColor());
 		return view;
 	}
 }

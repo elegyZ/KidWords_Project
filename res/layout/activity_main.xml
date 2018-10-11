@@ -6,6 +6,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/background_style"
     tools:context="com.example.kidapp.MainActivity" >
 
     <ListView
@@ -13,7 +14,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true" >
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp" >
 
     </ListView>
 

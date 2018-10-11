@@ -2,29 +2,33 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
-
     <ImageView
         android:id="@+id/fruit_image"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginTop="10dp"
-        android:layout_toStartOf="@+id/fruit_name"
-        android:layout_above="@+id/space1"
+        android:layout_alignParentStart="true"
         android:contentDescription="@string/app_name"
         android:src="@drawable/strawberry" />
 
-    <TextView
-        android:id="@+id/fruit_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:text="@string/test"
-        android:layout_marginEnd="30dp"
-        android:layout_marginTop="25dp"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+    <LinearLayout
+        android:id="@+id/fruit_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@+id/fruit_image"
+        android:layout_alignTop="@+id/fruit_image"
+        android:layout_toEndOf="@+id/fruit_image"
+        android:orientation="vertical"
+        android:background="#E4AB38" >
 
+        <TextView
+            android:id="@+id/fruit_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/test"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="50sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
 </RelativeLayout>
